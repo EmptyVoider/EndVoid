@@ -1,7 +1,151 @@
 fileFormatVersion: 2
 guid: ab43539c434a8df4abbe83f94bae6ee3
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4175417578343873993
+    second: LilBoy_goodEyex100_0
+  - first:
+      213: 8257880516955678694
+    second: LilBoy_goodEyex100_1
+  - first:
+      213: 2698096528173421427
+    second: LilBoy_goodEyex100_2
+  - first:
+      213: 9046443551587489638
+    second: LilBoy_goodEyex100_3
+  - first:
+      213: -2584658364285482884
+    second: LilBoy_goodEyex100_4
+  - first:
+      213: 591573748419244842
+    second: LilBoy_goodEyex100_5
+  - first:
+      213: 8404195965605222249
+    second: LilBoy_goodEyex100_6
+  - first:
+      213: 2054577156672215934
+    second: LilBoy_goodEyex100_7
+  - first:
+      213: 7195505213868986062
+    second: LilBoy_goodEyex100_8
+  - first:
+      213: 6346211340188104278
+    second: LilBoy_goodEyex100_9
+  - first:
+      213: 4442640312847534072
+    second: LilBoy_goodEyex100_10
+  - first:
+      213: -5554863515640098469
+    second: LilBoy_goodEyex100_11
+  - first:
+      213: -5912157299913226933
+    second: LilBoy_goodEyex100_12
+  - first:
+      213: -4669723320724853390
+    second: LilBoy_goodEyex100_13
+  - first:
+      213: -6069297056266150350
+    second: LilBoy_goodEyex100_14
+  - first:
+      213: -300960268366691774
+    second: LilBoy_goodEyex100_15
+  - first:
+      213: -590504513742877648
+    second: LilBoy_goodEyex100_16
+  - first:
+      213: -7757830857555256829
+    second: LilBoy_goodEyex100_17
+  - first:
+      213: 7308854178028544940
+    second: LilBoy_goodEyex100_18
+  - first:
+      213: 956457671491544697
+    second: LilBoy_goodEyex100_19
+  - first:
+      213: -565068410406118546
+    second: LilBoy_goodEyex100_20
+  - first:
+      213: -6388958819576026733
+    second: LilBoy_goodEyex100_21
+  - first:
+      213: -3878672680840424604
+    second: LilBoy_goodEyex100_22
+  - first:
+      213: -1733249408341860346
+    second: LilBoy_goodEyex100_23
+  - first:
+      213: 8634831617557756335
+    second: LilBoy_goodEyex100_24
+  - first:
+      213: -1475970741409772593
+    second: LilBoy_goodEyex100_25
+  - first:
+      213: 2260339634061473536
+    second: LilBoy_goodEyex100_26
+  - first:
+      213: 6681709984884208390
+    second: LilBoy_goodEyex100_27
+  - first:
+      213: -797926581905277828
+    second: LilBoy_goodEyex100_28
+  - first:
+      213: 8786403024605309326
+    second: LilBoy_goodEyex100_29
+  - first:
+      213: -5259129378961117451
+    second: LilBoy_goodEyex100_30
+  - first:
+      213: 1237092295070187235
+    second: LilBoy_goodEyex100_31
+  - first:
+      213: -2239433053814526
+    second: LilBoy_goodEyex100_32
+  - first:
+      213: -2561892117079661775
+    second: LilBoy_goodEyex100_33
+  - first:
+      213: 4548548861286974084
+    second: LilBoy_goodEyex100_34
+  - first:
+      213: -7121174241507200678
+    second: LilBoy_goodEyex100_35
+  - first:
+      213: 5166699540151922001
+    second: LilBoy_goodEyex100_36
+  - first:
+      213: -8063979765913285988
+    second: LilBoy_goodEyex100_37
+  - first:
+      213: -1004777785955909908
+    second: LilBoy_goodEyex100_38
+  - first:
+      213: 430634896796035993
+    second: LilBoy_goodEyex100_39
+  - first:
+      213: -5139693710315462413
+    second: LilBoy_goodEyex100_40
+  - first:
+      213: 3428880759688401970
+    second: LilBoy_goodEyex100_41
+  - first:
+      213: -1765888034111460249
+    second: LilBoy_goodEyex100_42
+  - first:
+      213: -2459358256807298658
+    second: LilBoy_goodEyex100_43
+  - first:
+      213: 8940275142561541440
+    second: LilBoy_goodEyex100_44
+  - first:
+      213: -7632170804629661774
+    second: LilBoy_goodEyex100_45
+  - first:
+      213: -2303079903807611129
+    second: LilBoy_goodEyex100_46
+  - first:
+      213: -333870110584848792
+    second: LilBoy_goodEyex100_47
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +185,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -73,9 +217,285 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 144
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73244e5b5dfed06c0800000000000000
+      internalID: -4175417578343873993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 145
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e723caf392e99270800000000000000
+      internalID: 8257880516955678694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 144
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373dd7b4f70917520800000000000000
+      internalID: 2698096528173421427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 98
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667def4ea7c6b8d70800000000000000
+      internalID: 9046443551587489638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_4
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 97
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78850b69e2712cd0800000000000000
+      internalID: -2584658364285482884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 98
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23b9fc9031b53800800000000000000
+      internalID: 591573748419244842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 50
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9679ba014b3b1a470800000000000000
+      internalID: 8404195965605222249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_7
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 49
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b5413d903538c10800000000000000
+      internalID: 2054577156672215934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_8
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 50
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecec12c5ed19bd360800000000000000
+      internalID: 7195505213868986062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656b7791795421850800000000000000
+      internalID: 6346211340188104278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_10
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f78b1093dd67ad30800000000000000
+      internalID: 4442640312847534072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoy_goodEyex100_11
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 2
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b519e7e301929e2b0800000000000000
+      internalID: -5554863515640098469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

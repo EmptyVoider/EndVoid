@@ -1,7 +1,115 @@
 fileFormatVersion: 2
 guid: b2cddf4f5858c394aa4531371e6d3474
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -632522375447657819
+    second: LilBoyx100_0
+  - first:
+      213: 6846157013882198618
+    second: LilBoyx100_1
+  - first:
+      213: -8588254384692071781
+    second: LilBoyx100_2
+  - first:
+      213: 9133189289977513869
+    second: LilBoyx100_3
+  - first:
+      213: 7578984557302498268
+    second: LilBoyx100_4
+  - first:
+      213: -3254141401915814302
+    second: LilBoyx100_5
+  - first:
+      213: -8071652395937348879
+    second: LilBoyx100_6
+  - first:
+      213: -9060840749606021629
+    second: LilBoyx100_7
+  - first:
+      213: -4198301271628397362
+    second: LilBoyx100_8
+  - first:
+      213: -2246001721481254222
+    second: LilBoyx100_9
+  - first:
+      213: -472539184089740239
+    second: LilBoyx100_10
+  - first:
+      213: -3854713836539468097
+    second: LilBoyx100_11
+  - first:
+      213: 1746963180956638699
+    second: LilBoyx100_12
+  - first:
+      213: -6429201114221475830
+    second: LilBoyx100_13
+  - first:
+      213: -4486154064215651672
+    second: LilBoyx100_14
+  - first:
+      213: -1445980958622074213
+    second: LilBoyx100_15
+  - first:
+      213: -5754361534330417158
+    second: LilBoyx100_16
+  - first:
+      213: -2795475039221393219
+    second: LilBoyx100_17
+  - first:
+      213: -4576958754715451407
+    second: LilBoyx100_18
+  - first:
+      213: 4275711218016730932
+    second: LilBoyx100_19
+  - first:
+      213: -4932972291345964120
+    second: LilBoyx100_20
+  - first:
+      213: 2191554774986229770
+    second: LilBoyx100_21
+  - first:
+      213: 5242448238737372535
+    second: LilBoyx100_22
+  - first:
+      213: -1055144776399333586
+    second: LilBoyx100_23
+  - first:
+      213: 2298280933592456222
+    second: LilBoyx100_24
+  - first:
+      213: -9024992196763593083
+    second: LilBoyx100_25
+  - first:
+      213: 8827555457917986969
+    second: LilBoyx100_26
+  - first:
+      213: -1761551523112473721
+    second: LilBoyx100_27
+  - first:
+      213: 5006168714527409785
+    second: LilBoyx100_28
+  - first:
+      213: -5243166839901331278
+    second: LilBoyx100_29
+  - first:
+      213: -4561191478333814654
+    second: LilBoyx100_30
+  - first:
+      213: -2579514224268083046
+    second: LilBoyx100_31
+  - first:
+      213: 8463133865717843074
+    second: LilBoyx100_32
+  - first:
+      213: -8046834405245890066
+    second: LilBoyx100_33
+  - first:
+      213: 4014407528511692877
+    second: LilBoyx100_34
+  - first:
+      213: -5597125688053227726
+    second: LilBoyx100_35
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +140,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,12 +149,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -66,7 +174,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -75,7 +207,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: LilBoyx100_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 144
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2c4f23044d837f0800000000000000
+      internalID: -632522375447657819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoyx100_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 145
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a5ff8188f620f50800000000000000
+      internalID: 6846157013882198618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoyx100_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 144
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92fcbfb32460d880800000000000000
+      internalID: -8588254384692071781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoyx100_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 98
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87038ff44b9fbe70800000000000000
+      internalID: 9133189289977513869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoyx100_4
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 92
+        width: 19
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3cf28bc46fd2960800000000000000
+      internalID: 7578984557302498268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoyx100_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 98
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e8ae9d2a7f6d2d0800000000000000
+      internalID: -3254141401915814302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoyx100_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 50
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f249bd49eabbff80800000000000000
+      internalID: -8071652395937348879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoyx100_7
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 49
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3065959385d614280800000000000000
+      internalID: -9060840749606021629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoyx100_8
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 50
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4c48cac33acb5c0800000000000000
+      internalID: -4198301271628397362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoyx100_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2baa13a855994d0e0800000000000000
+      internalID: -2246001721481254222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoyx100_10
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13cc0ed9d143179f0800000000000000
+      internalID: -472539184089740239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LilBoyx100_11
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 2
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb62846503e418ac0800000000000000
+      internalID: -3854713836539468097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
