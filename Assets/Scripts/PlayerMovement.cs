@@ -2,38 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
+    public float moveSpeed;
+    public Rigidbody2D rb;
 
-    public float speed;
-    private Rigidbody2D myRigidbody;
-    private Vector3 change;
+    public Animator playerAnimator;
+    Vector2 movement;
 
-
-    // Start is called before the first frame update
-    void Start() {
-        myRigidbody = GetComponent<Rigidbody2D>();
-        
-    }
-
-    // Update is called once per frame
-    void Update() {
-        change = Vector3.zero;
-        change.x = Input.GetAxisRaw("Horizontal");
-        change.y = Input.GetAxisRaw("Vertical");
-        if(change !=Vector3.zero)
-        {
-            MoveCharacter();
-
-
-        }
-    }
-    void MoveCharacter()
+    void Update()
     {
-        myRigidbody.MovePosition(
-            transform.position + change * speed * Time.deltaTime
-            );
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-
+        playerAnimator.SetFloat("Horizontal", movement.x);
+        playerAnimator.SetFloat("Vertical", movement.y);
+        playerAnimator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
+    void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+    }
 }
