@@ -14,14 +14,20 @@ public class SnappingObjects : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
         shouldSnap = false;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
         var currentPos = transform.position;
         newPos = new Vector2(Mathf.Round(currentPos.x), Mathf.Round(currentPos.y));//this is the snapping
         shouldSnap = true;
+        }
     }
 
     // Update is called once per frame

@@ -10,7 +10,6 @@ public class CameraFollow : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 interpolatedPosition = Vector3.Lerp(transform.position, target.position + offset, 0.05f);//here you can change camera smoothness
-
         transform.position = interpolatedPosition;
        // transform.position = target.position + offset;
     }
