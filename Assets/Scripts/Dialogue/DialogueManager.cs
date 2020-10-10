@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
         nameText.text = dialogue.npcName;
 
         sentences.Clear();
-
+        
         foreach(string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -51,9 +51,7 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-
         sourceAudio.PlayOneShot(sentenceSounds.Dequeue());
-
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
