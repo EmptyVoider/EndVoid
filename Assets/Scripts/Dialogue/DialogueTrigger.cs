@@ -1,21 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Dialogue;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
+    public Dialogue.Dialogue dialogue;
+    private DialogueManager dialogueManager;
 
-    public void TriggerDialogue()
+    private void Awake()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        dialogueManager = FindObjectOfType<DialogueManager>();//Only search for it once. Can also be a singleton
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            TriggerDialogue();
-        }
+        
+        dialogueManager.StartDialogue(dialogue);
     }
 }

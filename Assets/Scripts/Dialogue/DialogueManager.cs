@@ -1,76 +1,58 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour
+namespace Dialogue
 {
-    public Text nameText;
-    public Text dialogueText;
-
-    public Animator animator;
-
-    private Queue<string> sentences;
-    private Queue<AudioClip> sentenceSounds;
-
-    public AudioSource sourceAudio;
-
-    void Start()
+    public class DialogueManager : MonoBehaviour
     {
-        sentences = new Queue<string>();
-        sentenceSounds = new Queue<AudioClip>();
-    }
+        public DialogueBox dialogueBox;
+        public Text nameText;
+        public Animator animator;
 
-    public void StartDialogue(Dialogue dialogue)
-    {
-        animator.SetBool("isOpen", true);
+        public KeyCode NextKey = KeyCode.Return;
+        public KeyCode FastForwardKey = KeyCode.Return;
 
-        nameText.text = dialogue.npcName;
 
-        sentences.Clear();
+        private void Update()
+        {
+            if (Input.GetKeyDown(NextKey))
+            {
+                DisplayNextSentence();
+            }
+
+            dialogueBox.SpedUp = Input.GetKey(FastForwardKey);
+
+        }
+
+        public void StartDialogue(Dialogue dialogue)
+        {
+            animator.SetBool("isOpen", true);
+
+            nameText.text = dialogue.npcName;
         
-        foreach(string sentence in dialogue.sentences)
-        {
-            sentences.Enqueue(sentence);
+            dialogueBox.SetDialogue(dialogue.sentences);
+            dialogueBox.Speech = dialogue.sentenceSound;
+            dialogueBox.ShowDialogue();
+
         }
 
-        sentenceSounds.Clear();
-
-        foreach (AudioClip voiceClip in dialogue.sentenceSound)
+        public void DisplayNextSentence()
         {
-            sentenceSounds.Enqueue(voiceClip);
+            if (dialogueBox.HasMoreDialogue)
+            {
+                dialogueBox.ShowDialogue();
+            }
+            else
+            {
+                EndDialogue();
+            }
         }
 
-        DisplayNextSentence();
-    }
-
-    public void DisplayNextSentence()
-    {
-        if(sentences.Count == 0)
+        public void EndDialogue()
         {
-            EndDialogue();
-            return;
+            animator.SetBool("isOpen", false);
+            Debug.Log("Finished conversation");
         }
-        sourceAudio.PlayOneShot(sentenceSounds.Dequeue());
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-    }
 
-    IEnumerator TypeSentence (string sentence)
-    {
-        dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
-        {
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(.07f);
-        }
     }
-
-    public void EndDialogue()
-    {
-        animator.SetBool("isOpen", false);
-        Debug.Log("Finished conversation");
-    }
-
 }
