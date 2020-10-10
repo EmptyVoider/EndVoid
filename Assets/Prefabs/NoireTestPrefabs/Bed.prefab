@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7561584007064097081}
   m_Layer: 0
   m_Name: Bed
-  m_TagString: Untagged
+  m_TagString: Bed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,5 +124,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWorld: 0
   toLoad: 
-  fadeImg: {fileID: 0}
-  fadeSpeed: 0.7
+  blackImg: {fileID: 0}
+  anim: {fileID: 0}
+  eyeBase: {fileID: 0}
