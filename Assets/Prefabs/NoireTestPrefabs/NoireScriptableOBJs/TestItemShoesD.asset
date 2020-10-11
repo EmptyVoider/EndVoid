@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TestItemShoesD
   m_EditorClassIdentifier: 
   itemName: TestItemDShoes
-  effects: 02000000
-  description: RedShoes don't go sanic fast.
+  effects: 01000000
+  description: BlueShoes don't go sanic fast.

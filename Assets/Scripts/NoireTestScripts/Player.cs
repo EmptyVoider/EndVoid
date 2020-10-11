@@ -50,5 +50,14 @@ public class Player : MonoBehaviour
         Transform bedPos = GameObject.FindGameObjectWithTag("Bed").transform;
         //setting the player position to be 2 units to the side of the bed making it look like the player just exited bed.
         gameObject.transform.position = new Vector2(bedPos.position.x + 2, bedPos.position.y);
+        //Start on wake.
+        StartCoroutine(RestedUp());
+    }
+    private IEnumerator RestedUp() 
+    {
+        //Temporarily increase movespeed by 3 for 2 seconds. Can be altered to add running animation, change run time, add more features, etc.
+        pMove.moveSpeed += 3;
+        yield return new WaitForSecondsRealtime(2f);
+        pMove.moveSpeed -= 3;
     }
 }   

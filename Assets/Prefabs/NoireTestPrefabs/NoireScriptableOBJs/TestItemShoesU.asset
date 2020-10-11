@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TestItemShoesU
   m_EditorClassIdentifier: 
   itemName: TestItemUShoes
-  effects: 01000000
+  effects: 00000000
   description: RedShoes go sanic fast.
