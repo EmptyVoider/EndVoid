@@ -1,76 +1,54 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour
+namespace Dialogue
 {
-    public Text nameText;
-    public Text dialogueText;
-
-    public Animator animator;
-
-    private Queue<string> sentences;
-    private Queue<AudioClip> sentenceSounds;
-
-    public AudioSource sourceAudio;
-
-    void Start()
+    public class DialogueManager : MonoBehaviour
     {
-        sentences = new Queue<string>();
-        sentenceSounds = new Queue<AudioClip>();
-    }
+        public DialogueBox dialogueBox;
+        public Animator animator;
 
-    public void StartDialogue(Dialogue dialogue)
-    {
-        animator.SetBool("isOpen", true);
+        public KeyCode NextKey = KeyCode.Return;
+        public KeyCode FastForwardKey = KeyCode.Return;
 
-        nameText.text = dialogue.npcName;
 
-        sentences.Clear();
-        
-        foreach(string sentence in dialogue.sentences)
+        private void Update()
         {
-            sentences.Enqueue(sentence);
+            if (Input.GetKeyDown(NextKey))
+            {
+                DisplayNextSentence();
+            }
+
+            dialogueBox.SpedUp = Input.GetKey(FastForwardKey);
+
         }
 
-        sentenceSounds.Clear();
-
-        foreach (AudioClip voiceClip in dialogue.sentenceSound)
+        public void StartDialogue(Dialogue dialogue)
         {
-            sentenceSounds.Enqueue(voiceClip);
+            animator.SetBool("isOpen", true);
+            dialogueBox.SetDialogue(dialogue.npcName, dialogue.sentences);
+            dialogueBox.Speech = dialogue.sentenceSound;
+            dialogueBox.ShowDialogue();
+
         }
 
-        DisplayNextSentence();
-    }
-
-    public void DisplayNextSentence()
-    {
-        if(sentences.Count == 0)
+        public void DisplayNextSentence()
         {
-            EndDialogue();
-            return;
+            if (dialogueBox.HasMoreDialogue)
+            {
+                dialogueBox.ShowDialogue();
+            }
+            else
+            {
+                EndDialogue();
+            }
         }
-        sourceAudio.PlayOneShot(sentenceSounds.Dequeue());
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-    }
 
-    IEnumerator TypeSentence (string sentence)
-    {
-        dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
+        public void EndDialogue()
         {
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(.07f);
+            animator.SetBool("isOpen", false);
+            Debug.Log("Finished conversation");
         }
-    }
 
-    public void EndDialogue()
-    {
-        animator.SetBool("isOpen", false);
-        Debug.Log("Finished conversation");
     }
-
 }

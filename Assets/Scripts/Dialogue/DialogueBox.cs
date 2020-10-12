@@ -1,43 +1,49 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using System.Text;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-namespace Dialog
+namespace Dialogue
 {
-    [RequireComponent(typeof(DialogControl), typeof(AudioSource))]
-    public class DialogBox : MonoBehaviour
+    public class DialogueBox : MonoBehaviour
     {
         public float CharactersPerSecond;
+        public TextMeshProUGUI NameText;
         public TextMeshProUGUI Textbox;
         public GameObject NextPrompt;
         public int CharactertsPerRow;//This is a bit complex to get an accurate measurement.
-        private AudioSource SpeechAudio;
+        public AudioSource SpeechAudio;
         public bool SpedUp { get; set; }
-        
+        public AudioClip[] Speech { get; set; }
+        public bool HasMoreDialogue { get; set; }
+
         private int lineIndex; //index for which line we are showing
         private int characterIndex; //index for which line we are showing
         
         private string[] lines;
         private bool stillShowingLastLine;
-        private float originalPitch;
-
+        private char[] ALL_VOWLES = {'a','A', 'e', 'E', 'i', 'I', 'o', 'O','u', 'U'};
+        private float origianlPitch;
 
         private void Awake()
         {
-            SpeechAudio = GetComponent<AudioSource>();
-            originalPitch = SpeechAudio.pitch;
-
+            origianlPitch = SpeechAudio.pitch;
         }
 
-        public void SetDialog(string[] lines)
+        public void SetDialogue(string characterName, string[] lines)
         {
+
+            NameText.text = characterName;
             this.lines = lines;
             lineIndex = 0;
+            characterIndex = 0;
+            HasMoreDialogue = lines.Length > 0;
         }
 
-        public void ShowDialog()
+        public void ShowDialogue()
         {
             StartCoroutine(ShowNextLine());
         }
@@ -46,11 +52,6 @@ namespace Dialog
         {
             if (stillShowingLastLine)
             {
-                yield break;
-            }
-            if (lineIndex >= lines.Length)
-            {
-                FinishedLDialog();
                 yield break;
             }
 
@@ -65,15 +66,6 @@ namespace Dialog
                     yield return new WaitForSeconds(1 / CharactersSpeed());
                 }
 
-                if (SpedUp)
-                {
-                    SpeechAudio.pitch = originalPitch * 3;
-                }
-                else
-                {
-                    SpeechAudio.pitch = originalPitch;
-                }
-
             }
             PrepareForNextLine();
         }
@@ -84,6 +76,7 @@ namespace Dialog
             var insideTag = false;
             int charactersInThisLine = 0;
             int index = 0;
+            line.Replace("<", " <");//to make sure tags arte not accidentally treated as parts of words
             foreach (var character in line)
             {
                 insideTag = EscapeTags(character, insideTag, stringBuilder);
@@ -91,6 +84,10 @@ namespace Dialog
                 {
                     stringBuilder.Append(character);
                     charactersInThisLine += 1;
+                    if (character == '\n')//forced new line, by the dialogue itself
+                    {
+                        charactersInThisLine = 0;
+                    }
                     if (character == ' ' && ShouldBreakLine(line, index, charactersInThisLine))
                     {
                         stringBuilder.Append("\n");
@@ -119,6 +116,11 @@ namespace Dialog
                 if (!insideTag && character != '>' && i <= characterIndex)
                 {
                     stringBuilder.Append(character);
+                    if (IsVowel(character))
+                    {
+                        PlayRandomSound();
+
+                    }
                 }
 
                 //the delay between different characters should not trigger for characters inside tags
@@ -132,9 +134,42 @@ namespace Dialog
             return shouldWait;
         }
 
+        private void PlayRandomSound()
+        {
+            AdjustPitch();
+            if (SpeechAudio.isPlaying)
+            {
+                return;
+            }
+            PlayNewSound();
+        }
+
+        private void PlayNewSound()
+        {
+            var i = Random.Range(0, Speech.Length); //Random is exclusive in int for some reason
+            SpeechAudio.clip = Speech[i];
+            SpeechAudio.Play();
+        }
+
+        private void AdjustPitch()
+        {
+            if (SpedUp)
+            {
+                SpeechAudio.pitch = origianlPitch * 1.5f;
+            }
+            else
+            {
+                SpeechAudio.pitch = origianlPitch;
+            }
+        }
+
+        private bool IsVowel(char character)
+        {
+            return ALL_VOWLES.Contains(character);
+        }
+
         private bool ShouldBreakLine(string line, int index, int charactersInLine)
         {
-            
             if (index >= line.Length - 1)
             {
                 return false;//End of the line
@@ -143,7 +178,7 @@ namespace Dialog
             var endOfWord = substring.IndexOf(' ');
             if (endOfWord <= 0)
             {
-                return false;
+                endOfWord = substring.Length - 1;//end of line
             }
             string nextWord = substring.Substring(0, endOfWord);
             var shouldBreakLine = charactersInLine + nextWord.Length >= this.CharactertsPerRow;
@@ -186,8 +221,11 @@ namespace Dialog
         {
             stillShowingLastLine = false;
             NextPrompt.SetActive(true);
-            SpeechAudio.Pause();
             lineIndex += 1;
+            if (lineIndex >= lines.Length)
+            {
+                HasMoreDialogue = false;
+            }
         }
 
         private float CharactersSpeed()
@@ -202,12 +240,7 @@ namespace Dialog
                 return CharactersPerSecond;
             }
         }
-        
-        private void FinishedLDialog()
-        {
-            gameObject.SetActive(false);
-        }
-        
+
     }
     
 }

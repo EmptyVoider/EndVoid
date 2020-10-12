@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[System.Serializable]
-public class Dialogue
+namespace Dialogue
 {
-    public string npcName;
+    [System.Serializable]
+    public class Dialogue
+    {
+        public string npcName;
 
-    [TextArea(3, 25)]
-    public string[] sentences;
+        [TextArea(3, 25)]
+        public string[] sentences;
 
-    public AudioClip[] sentenceSound;
+        public AudioClip[] sentenceSound;
+    }
 }
