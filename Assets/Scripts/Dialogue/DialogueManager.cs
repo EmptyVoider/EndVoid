@@ -6,7 +6,6 @@ namespace Dialogue
     public class DialogueManager : MonoBehaviour
     {
         public DialogueBox dialogueBox;
-        public Text nameText;
         public Animator animator;
 
         public KeyCode NextKey = KeyCode.Return;
@@ -27,10 +26,7 @@ namespace Dialogue
         public void StartDialogue(Dialogue dialogue)
         {
             animator.SetBool("isOpen", true);
-
-            nameText.text = dialogue.npcName;
-        
-            dialogueBox.SetDialogue(dialogue.sentences);
+            dialogueBox.SetDialogue(dialogue.npcName, dialogue.sentences);
             dialogueBox.Speech = dialogue.sentenceSound;
             dialogueBox.ShowDialogue();
 

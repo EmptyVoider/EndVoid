@@ -11,6 +11,7 @@ namespace Dialogue
     public class DialogueBox : MonoBehaviour
     {
         public float CharactersPerSecond;
+        public TextMeshProUGUI NameText;
         public TextMeshProUGUI Textbox;
         public GameObject NextPrompt;
         public int CharactertsPerRow;//This is a bit complex to get an accurate measurement.
@@ -32,8 +33,10 @@ namespace Dialogue
             origianlPitch = SpeechAudio.pitch;
         }
 
-        public void SetDialogue(string[] lines)
+        public void SetDialogue(string characterName, string[] lines)
         {
+
+            NameText.text = characterName;
             this.lines = lines;
             lineIndex = 0;
             characterIndex = 0;
@@ -73,6 +76,7 @@ namespace Dialogue
             var insideTag = false;
             int charactersInThisLine = 0;
             int index = 0;
+            line.Replace("<", " <");//to make sure tags arte not accidentally treated as parts of words
             foreach (var character in line)
             {
                 insideTag = EscapeTags(character, insideTag, stringBuilder);
@@ -80,6 +84,10 @@ namespace Dialogue
                 {
                     stringBuilder.Append(character);
                     charactersInThisLine += 1;
+                    if (character == '\n')//forced new line, by the dialogue itself
+                    {
+                        charactersInThisLine = 0;
+                    }
                     if (character == ' ' && ShouldBreakLine(line, index, charactersInThisLine))
                     {
                         stringBuilder.Append("\n");
@@ -162,7 +170,6 @@ namespace Dialogue
 
         private bool ShouldBreakLine(string line, int index, int charactersInLine)
         {
-            
             if (index >= line.Length - 1)
             {
                 return false;//End of the line
@@ -171,7 +178,7 @@ namespace Dialogue
             var endOfWord = substring.IndexOf(' ');
             if (endOfWord <= 0)
             {
-                return false;
+                endOfWord = substring.Length - 1;//end of line
             }
             string nextWord = substring.Substring(0, endOfWord);
             var shouldBreakLine = charactersInLine + nextWord.Length >= this.CharactertsPerRow;
