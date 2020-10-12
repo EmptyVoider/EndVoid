@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 /*
  * Item Effects and the Scriptable object setup for new items.
+ * By: Noire
  */
 public enum ItemEffects 
 {
@@ -16,6 +16,7 @@ public class Item :	ScriptableObject
 {
 	public string itemName;
 	//Item Name
+	public Sprite image;
 	public ItemEffects[] effects;
 	//Array of effects, can include literally all effects or none.
 	[TextArea(3, 25)]

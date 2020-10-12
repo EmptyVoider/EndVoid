@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
 {
 	/*
 	 * GameManager will be used for many more things but as of now it only creates the player at runtime so that there will be no duplicate players.
+	 * By: Noire
 	 */
 	public GameObject playerOBJ;
-	//Reference to the prefab for player.
+	//Reference to the prefab for player and drop down panel (top left).
 	private void Awake()
 	{
 
@@ -19,4 +20,6 @@ public class GameManager : MonoBehaviour
 			//Create instance of player prefab.
 		}
 	}
+
+
 }

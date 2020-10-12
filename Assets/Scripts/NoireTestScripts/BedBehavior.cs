@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class BedBehavior : MonoBehaviour
 {
 	/*
+	 * By: Noire
 	 * Bed Behavior is for teleporting between worlds. 
 	 * Can be altered to fit additional or fewer worlds. 
 	 * Can be applied to different objs with slight modification.
@@ -81,8 +82,15 @@ public class BedBehavior : MonoBehaviour
 		//Set the black image animator variable for Fade to true so the fade to black begins.
 		yield return new WaitUntil(() => blackImg.color.a == 1);
 		//Wait until the black image is fully visible and no longer transparent.
-		eyeBase.GetComponent<Animator>().SetBool("Blinking", true);
-		//Set eyebase animator variable Blinking to true so the eyes blink closed.
+		if (toLoad.Contains("NoireTestingScene"))
+		{
+			eyeBase.GetComponent<Animator>().Play("EyeOpen");
+		}
+		else
+		{
+			eyeBase.GetComponent<Animator>().Play("EyeBlink");
+		}
+		//Play EyeBase animation based on scene changing to. if not overworld, EyeBlink. else, EyeOpen.
 		yield return new WaitForSecondsRealtime(2f);
 		//Wait for eye animation to finish. Can be changed from hardcoded time.
 		SceneManager.LoadScene(toLoad);

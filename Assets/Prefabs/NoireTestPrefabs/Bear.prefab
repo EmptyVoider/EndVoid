@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3218790694777443142}
   - component: {fileID: 1533846884178171902}
-  - component: {fileID: 486041237660036047}
   m_Layer: 0
   m_Name: Radius
   m_TagString: Untagged
@@ -48,18 +47,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
---- !u!114 &486041237660036047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3701579818226763958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52153a105698154b90fc65699f582da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4408991988347710135
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,10 +146,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0029404163, y: 0.12643957}
+  m_Offset: {x: 0.0029404163, y: 0.76988244}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 0.9166667, y: 1.25}
     newSize: {x: 0.9166667, y: 1.25}
     adaptiveTilingThreshold: 0.5
@@ -170,7 +157,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7578826, y: 0.8442173}
+  m_Size: {x: 0.81953, y: 0.89815855}
   m_EdgeRadius: 0
 --- !u!58 &7521508140293439905
 CircleCollider2D:
@@ -185,9 +172,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0029406548, y: -0.28816462}
+  m_Offset: {x: -0.0029406548, y: 0.2473953}
   serializedVersion: 2
-  m_Radius: 0.392704
+  m_Radius: 0.42738077
 --- !u!114 &3222627980631793205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,4 +187,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6480b7901024b47a8af4ac2d19e95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerable: 0

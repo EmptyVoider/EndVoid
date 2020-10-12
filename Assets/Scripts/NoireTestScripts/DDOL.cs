@@ -6,6 +6,7 @@ public class DDOL : MonoBehaviour
 {
 	/*
 	 * DDOL is basically a way of keeping certain data between scenes without it resetting to default values.
+	 * By: Noire
 	 */
 	private void Awake()
 	{

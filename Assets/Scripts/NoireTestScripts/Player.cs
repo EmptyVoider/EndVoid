@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     /*
      * Player basic stat setup w/ reposition for exiting beds.
-     * By: Noire
+     * 
      * can be revised to keep player stats/effects as a Scriptable Object or something serializable for saving purposes.
      */
 
@@ -14,12 +14,21 @@ public class Player : MonoBehaviour
     //Access to the player movement script.
     public List<Item> collectables;
     //A list of all collectables in the players inventory.
+    public GameObject dropdownPanel;
     private void Start()
     {
         pMove = GetComponent<PlayerMovement>();
         //Obtaining the player movement script.
         SceneManager.sceneLoaded += SetPositionNearBed;
         //Setting 'SceneLoaded' (when new scene is done loading) to have a trigger function in SetPositionNearBed(). More can be added.
+        if (!dropdownPanel) 
+        {
+            dropdownPanel = GameObject.Find("ItemsPanel");
+        }
+    }
+    public void AddItemToPanel(Item item) 
+    {
+        dropdownPanel.GetComponent<ItemsPanel>().AddItemToPanel(item);
     }
     //The ability to change stats based on whatever item is input, grabbing its effects.
     public void ChangeStats(Item item) 

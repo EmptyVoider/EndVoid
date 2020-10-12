@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: TestItemShoesD
   m_EditorClassIdentifier: 
   itemName: TestItemDShoes
+  image: {fileID: -3840959177818812698, guid: 92c360461ce83c641a949010ab82b1c8, type: 3}
   effects: 01000000
   description: BlueShoes don't go sanic fast.
