@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NoireTestScenes/NoireTestingNightmareScene.unity
     guid: 0c31fff7a38eb024ea078b061bea89b4
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 6cd36e8248f7b244cb79049e8b37d896
+  - enabled: 1
+    path: Assets/Scenes/SettingsScene.unity
+    guid: cceebb22047f4d044b895740b91098e9
   m_configObjects: {}

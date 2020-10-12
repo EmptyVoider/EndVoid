@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class SnappingObjects : MonoBehaviour
 {
-    public Vector2 newPos;
-    public bool shouldSnap;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Vector2 newPos;
+    private bool shouldSnap;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,12 +20,11 @@ public class SnappingObjects : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
         var currentPos = transform.position;
-        newPos = new Vector2(Mathf.Round(currentPos.x), Mathf.Round(currentPos.y));//this is the snapping
+        newPos = new Vector2(Mathf.Round(currentPos.x), Mathf.Round(currentPos.y) - 0.5f);//this is the snapping
         shouldSnap = true;
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (shouldSnap)
