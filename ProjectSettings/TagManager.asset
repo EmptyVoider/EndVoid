@@ -48,9 +48,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackMask
+    uniqueID: 2133954303
+    locked: 0
   - name: Player
     uniqueID: 1556537755
     locked: 0
   - name: Items
     uniqueID: 2921231057
+    locked: 0
+  - name: FrontMask
+    uniqueID: 3852699155
     locked: 0
