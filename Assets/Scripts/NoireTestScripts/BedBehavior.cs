@@ -53,7 +53,7 @@ public class BedBehavior : MonoBehaviour
 			//determine which num was rolled randomly. Change down here as well to include new worlds or change the odds for different worlds.
 				case 1:
 				//Called on a 1 roll.
-					toLoad = "NoireTestingDreamScene";
+					toLoad = "NoireTestingNightmareScene";
 					break;
 				case 2:
 				//Called on a 2 roll.
