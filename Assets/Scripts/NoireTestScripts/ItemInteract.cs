@@ -20,7 +20,6 @@ public class ItemInteract : MonoBehaviour
 		if (!p.collectables.Contains(item))
 		//If the list in player 'collectables' does not have the current item already.
 		{
-			p.AddItemToPanel(item);
 			p.collectables.Add(item);
 			//Add item data to collectables.
 			p.ChangeStats(item);

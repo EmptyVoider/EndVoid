@@ -10,25 +10,31 @@ public class Player : MonoBehaviour
      * can be revised to keep player stats/effects as a Scriptable Object or something serializable for saving purposes.
      */
 
-    private PlayerMovement pMove;
+    public PlayerMovement pMove;
     //Access to the player movement script.
     public List<Item> collectables;
     //A list of all collectables in the players inventory.
-    public GameObject dropdownPanel;
     private void Start()
     {
         pMove = GetComponent<PlayerMovement>();
         //Obtaining the player movement script.
         SceneManager.sceneLoaded += SetPositionNearBed;
         //Setting 'SceneLoaded' (when new scene is done loading) to have a trigger function in SetPositionNearBed(). More can be added.
-        if (!dropdownPanel) 
-        {
-            dropdownPanel = GameObject.Find("ItemsPanel");
-        }
     }
-    public void AddItemToPanel(Item item) 
+    private void Update()
     {
-        dropdownPanel.GetComponent<ItemsPanel>().AddItemToPanel(item);
+        if (Input.GetKeyDown(KeyCode.F)) 
+        {
+            ShadowForm form = transform.GetComponentInChildren<ShadowForm>();
+            if (form.shadowForm)
+            {
+                form.ExitShadowForm();
+            }
+            else
+            {
+                form.EnterShadowForm();
+            }
+        }
     }
     //The ability to change stats based on whatever item is input, grabbing its effects.
     public void ChangeStats(Item item) 

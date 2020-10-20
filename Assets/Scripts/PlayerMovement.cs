@@ -11,17 +11,46 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     private MaskSwitch _maskSwitch;
 
+    PlayerEyes glowingEyes;
     private void Awake()
     {
         _maskSwitch = GetComponent<MaskSwitch>();
+        glowingEyes = GetComponentInChildren<PlayerEyes>();
     }
 
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        _maskSwitch.SwitchForMovement(movement);
-
+        if (movement.x > 0)
+        {
+            glowingEyes.ChangeLeft(false);
+            glowingEyes.ChangeRight(true);
+        }
+        else if (movement.x < 0) 
+        {
+            glowingEyes.ChangeLeft(true);
+            glowingEyes.ChangeRight(false);
+        }
+        if(movement.y > 0) 
+        {
+            glowingEyes.ChangeLeft(false);
+            glowingEyes.ChangeRight(false);
+        }
+        else if(movement.y < 0) 
+        {
+            glowingEyes.ChangeLeft(true);
+            glowingEyes.ChangeRight(true);
+        }
+        if(movement.x == 0 && movement.y == 0) 
+        {
+            glowingEyes.ChangeLeft(true);
+            glowingEyes.ChangeRight(true);
+        }
+        if (_maskSwitch)
+        {
+            _maskSwitch.SwitchForMovement(movement);
+        }
         playerAnimator.SetFloat("Horizontal", movement.x);
         playerAnimator.SetFloat("Vertical", movement.y);
         playerAnimator.SetFloat("Speed", movement.sqrMagnitude);
