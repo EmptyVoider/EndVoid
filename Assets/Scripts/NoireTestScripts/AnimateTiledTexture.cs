@@ -21,7 +21,7 @@ public class AnimateTiledTexture : MonoBehaviour
     private Material _materialInstance = null;      // Material instance of the material we create (if needed)
     private bool _hasMaterialInstance = false;      // A flag so we know if we have a material instance we need to clean up (better than a null check i think)
     private bool _isPlaying = false;                // A flag to determine if the animation is currently playing
-    private LineRenderer renderer;
+    private LineRenderer lineRenderer;
 
     public delegate void VoidEvent();               // The Event delegate
     private List<VoidEvent> _voidEventCallbackList; // A list of functions we need to call if events are enabled
@@ -55,7 +55,7 @@ public class AnimateTiledTexture : MonoBehaviour
             _isPlaying = false;
         }
         // Make sure the renderer is enabled
-        renderer.enabled = true;
+        lineRenderer.enabled = true;
 
         //Because of the way textures calculate the y value, we need to start at the max y value
         _index = _columns;
@@ -71,39 +71,39 @@ public class AnimateTiledTexture : MonoBehaviour
             // First check our material instance, if we already have a material instance
             // and we want to create a new one, we need to clean up the old one
             if (_hasMaterialInstance)
-                Object.Destroy(renderer.sharedMaterial);
+                Object.Destroy(lineRenderer.sharedMaterial);
 
             // create the new material
             _materialInstance = new Material(newMaterial);
 
             // Assign it to the renderer
-            renderer.sharedMaterial = _materialInstance;
+            lineRenderer.sharedMaterial = _materialInstance;
 
             // Set the flag
             _hasMaterialInstance = true;
         }
         else // if we dont have create a new instance, just assign the texture
-            renderer.sharedMaterial = newMaterial;
+            lineRenderer.sharedMaterial = newMaterial;
 
         // We need to recalc the texture size (since different material = possible different texture)
         CalcTextureSize();
 
         // Assign the new texture size
-        renderer.sharedMaterial.SetTextureScale("_MainTex", _textureSize);
+        lineRenderer.sharedMaterial.SetTextureScale("_MainTex", _textureSize);
     }
 
     private void Awake()
     {
-        if (!renderer) 
+        if (!lineRenderer) 
         {
-            renderer = GetComponent<LineRenderer>();
+            lineRenderer = GetComponent<LineRenderer>();
         }
         // Allocate memory for the events, if needed
         if (_enableEvents)
             _voidEventCallbackList = new List<VoidEvent>();
 
         //Create the material instance, if needed. else, just use this function to recalc the texture size
-        ChangeMaterial(renderer.sharedMaterial, _newMaterialInstance);
+        ChangeMaterial(lineRenderer.sharedMaterial, _newMaterialInstance);
     }
 
     private void OnDestroy()
@@ -111,7 +111,7 @@ public class AnimateTiledTexture : MonoBehaviour
         // If we wanted new material instances, we need to destroy the material
         if (_hasMaterialInstance)
         {
-            Object.Destroy(renderer.sharedMaterial);
+            Object.Destroy(lineRenderer.sharedMaterial);
             _hasMaterialInstance = false;
         }
     }
@@ -171,7 +171,7 @@ public class AnimateTiledTexture : MonoBehaviour
                             HandleCallbacks(_voidEventCallbackList);
 
                         if (_disableUponCompletion)
-                            renderer.enabled = false;
+                            lineRenderer.enabled = false;
 
                         // turn off the isplaying flag
                         _isPlaying = false;
@@ -215,6 +215,6 @@ public class AnimateTiledTexture : MonoBehaviour
         offset.y += _offset.y;
 
         // Update the material
-        renderer.sharedMaterial.SetTextureOffset("_MainTex", offset);
+        lineRenderer.sharedMaterial.SetTextureOffset("_MainTex", offset);
     }
 }
